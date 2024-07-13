@@ -18,18 +18,18 @@
             <input id="search" type="text" class="form-control my-4" placeholder="Search for Customer">
             <div class="input-group mb-4">
                 <span class="input-group-text bg-dark-green text-white">Sort by</span>
-                <select class="form-select" aria-label="Default select example">
+                <select id="sortType" class="form-select" aria-label="Default select example">
                     <option selected class="bg-light-green">Default</option>
                     <option value="name" class="bg-light-green">Name</option>
                     <option value="amount" class="bg-light-green">Amount of money</option>
                 </select>
                 <div class="bg-dark-green" style="width: 25px;"></div>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected class="bg-light-green">Default</option>
+                <select id="sortAs" class="form-select" aria-label="Default select example">
+                    <option selected value="default" class="bg-light-green">Default</option>
                     <option value="ascending" class="bg-light-green">Ascending</option>
                     <option value="descending" class="bg-light-green">Descending</option>
                 </select>
-                <button class="btn btn-search text-white">Sort</button>
+                <button id="sort" class="btn btn-search text-white">Sort</button>
             </div>
         </div>
         <table id="transactionTable" class="w-100 mt-4 bg-primary">
