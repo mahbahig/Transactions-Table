@@ -1,7 +1,6 @@
 "use strict"
 const dbPath = '../Database/transactionDB.json'
 jQuery(document).ready(function () { 
-
     const search = jQuery('#search');
     search.on('input', function () {
         console.log("Search Input");
@@ -12,11 +11,52 @@ async function readData() {
     try {
         let rawData = await fetch(dbPath);
         let data = await rawData.json();
-        console.log(data.customers[0].id);
+        console.log('Connection to database sucessfull');
+        try {
+            displayData(data);
+        }
+        catch {
+            window.alert('Error Displaying Transactions');
+        }
     }
     catch {
         window.alert('Error Connecting to Database');
     }
 }
 
+function displayData(data) {
+    const table = jQuery('#transactionTable');
+    for (let index = 0; index < data.transactions.length; index++) {
+        table.append(`
+            <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
+                <td class="text-center py-3">${index+1}</td>
+                <td class="text-center py-3">${getCustomerName(data.transactions[index].customer_id, data)}</td>
+                <td class="text-center py-3">${data.transactions[index].customer_id}</td>
+                <td class="text-center py-3">${data.transactions[index].date}</td>
+                <td class="text-center py-3">${data.transactions[index].amount}</td>
+                <td class="text-center py-3">${data.transactions[index].id}</td>
+            </tr>`);
+        
+    }
+}
+
+function getCustomerName(customerId, data) {
+    for (let index = 0; index < data.customers.length; index++) {
+        if (data.customers[index].id == customerId) { 
+            return data.customers[index].name;
+        }
+    }
+}
+
 readData();
+
+
+/*
+<tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
+    <td class="text-center py-3">getCustomerName(data.transactions[index].customer_id)</td>
+    <td class="text-center py-3">data.transactions[index].customer_id</td>
+    <td class="text-center py-3">data.transactions[index].date</td>
+    <td class="text-center py-3">data.transactions[index].amount</td>
+    <td class="text-center py-3">data.transactions[index].id</td>
+</tr>
+*/

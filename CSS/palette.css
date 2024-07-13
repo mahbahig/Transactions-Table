@@ -1,6 +1,7 @@
 :root {
     --dark-blue: #222831;
     --light-blue: #3C4C55;
+    --lightest-blue: #A3B3B7;
     --dark-beige: #F7E7DC;
     --dark-green: #76ABAE;
     --light-green: #D6EBEB;
@@ -12,6 +13,10 @@
 
 .bg-light-blue {
     background-color: var(--light-blue) !important;
+}
+
+.bg-lightest-blue {
+    background-color: var(--lightest-blue) !important;
 }
 
 .bg-dark-beige {
