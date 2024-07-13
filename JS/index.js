@@ -61,4 +61,3 @@ function getCustomerName(customerId, data) {
         }
     }
 }
-
