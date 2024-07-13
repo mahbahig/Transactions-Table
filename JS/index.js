@@ -3,7 +3,10 @@ const dbPath = '../Database/transactionDB.json'
 let sortType = 'default';
 let sortAs = 'default';
 
-jQuery(document).ready(function () {
+jQuery(document).ready(async function () {
+    let data = await readData();
+    displayData(data, sortType, sortAs);
+
     const search = jQuery('#search');
     const sortTypeSelect = jQuery('#sortType');
     const sortAsSelect = jQuery('#sortAs');
@@ -28,19 +31,14 @@ async function readData() {
         let rawData = await fetch(dbPath);
         let data = await rawData.json();
         console.log('Connection to database sucessfull');
-        try {
-            displayData(data);
-        }
-        catch {
-            window.alert('Error Displaying Transactions');
-        }
+        return data
     }
     catch {
         window.alert('Error Connecting to Database');
     }
 }
 
-function displayData(data) {
+function displayData(data, sortType, sortAs) {
     const table = jQuery('#transactionTable');
     for (let index = 0; index < data.transactions.length; index++) {
         table.append(`
@@ -64,4 +62,3 @@ function getCustomerName(customerId, data) {
     }
 }
 
-readData();
