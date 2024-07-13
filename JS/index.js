@@ -44,7 +44,7 @@ function displayData(data, sortType, sortAs) {
         table.append(`
             <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
                 <td class="text-center py-3">${index + 1}</td>
-                <td class="text-center py-3">${getCustomerName(data.transactions[index].customer_id, data.customers)}</td>
+                <td class="text-center py-3">${getCustomerName(data.transactions[index].customer_id, data)}</td>
                 <td class="text-center py-3">${data.transactions[index].customer_id}</td>
                 <td class="text-center py-3">${data.transactions[index].date}</td>
                 <td class="text-center py-3">${data.transactions[index].amount}</td>
@@ -55,9 +55,9 @@ function displayData(data, sortType, sortAs) {
 }
 
 function getCustomerName(customerId, data) {
-    for (let index = 0; index < data.length; index++) {
-        if (data[index].id == customerId) {
-            return data[index].name;
+    for (let index = 0; index < data.customers.length; index++) {
+        if (data.customers[index].id == customerId) {
+            return data.customers[index].name;
         }
     }
 }
