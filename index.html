@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/palette.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Customer Transaction</title>
+</head>
+
+<body class="bg-dark-beige">
+    <div class="container my-5">
+        <h1 class="w-fit mx-auto text-light-blue">Transactions Table</h1>
+        <div class="border-top-dotted border-bottom-dotted my-5">
+            <input id="search" type="text" class="form-control my-4" placeholder="Search for Customer">
+            <div class="input-group mb-4">
+                <span class="input-group-text bg-dark-green text-white">Sort by</span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected class="bg-light-green">Default</option>
+                    <option value="name" class="bg-light-green">Name</option>
+                    <option value="amount" class="bg-light-green">Amount of money</option>
+                </select>
+                <div class="bg-dark-green" style="width: 25px;"></div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected class="bg-light-green">Default</option>
+                    <option value="ascending" class="bg-light-green">Ascending</option>
+                    <option value="descending" class="bg-light-green">Descending</option>
+                </select>
+                <button class="btn btn-search text-white">Sort</button>
+            </div>
+        </div>
+        <table class="w-100 mt-4">
+            <thead class="bg-light-blue text-white">
+                <th class="text-center">Customer Name</th>
+                <th class="text-center">Customer ID</th>
+                <th class="text-center">Transaction Date</th>
+                <th class="text-center">Transaction Amount in USD</th>
+                <th class="text-center">Transaction ID</th>
+            </thead>
+        </table>
+    </div>
+
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/65721112fc.js" crossorigin="anonymous"></script>
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
