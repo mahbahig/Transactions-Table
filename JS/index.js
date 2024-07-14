@@ -38,7 +38,7 @@ async function readData() {
     }
 }
 
-async function displayData(incomingData, sortType, sortAs) {
+function displayData(incomingData, sortType, sortAs) {
     let data = incomingData;
     const table = jQuery('#transactionTable');
     table.empty();
@@ -52,25 +52,17 @@ async function displayData(incomingData, sortType, sortAs) {
             <th class="text-center">Transaction ID</th>
         </thead>`);
 
-    if (sortType === 'name' && (sortAs === 'default' || sortAs === 'ascending')) {
+    if (sortType === 'name') {
         data.customers.sort((a, b) => a.name.localeCompare(b.name));
         let customerMap = {};
         data.customers.forEach(customer => {
             customerMap[customer.id] = customer.name;
         });
         data.transactions.sort((a, b) => customerMap[a.customer_id].localeCompare(customerMap[b.customer_id]));
-    }
-
-    if (sortType === 'name' && sortAs === 'descending') {
-        data.customers.sort((a, b) => a.name.localeCompare(b.name));
-        let customerMap = {};
-        data.customers.forEach(customer => {
-            customerMap[customer.id] = customer.name;
-        });
-        data.transactions.sort((a, b) => {
-            return customerMap[b.customer_id].localeCompare(customerMap[a.customer_id]);
-        });
-    }
+        if (sortAs === 'descending') {
+            data.transactions.reverse();
+        }
+    };
 
     for (let index = 0; index < data.transactions.length; index++) {
         table.append(`
