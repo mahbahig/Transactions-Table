@@ -2,12 +2,13 @@
 const dbPath = '../Database/transactionDB.json';
 let sortType = 'default';
 let sortAs = 'default';
+let search = '';
 
 jQuery(document).ready(async function () {
     let data = await readData();
     displayData(data, sortType, sortAs);
 
-    const search = jQuery('#search');
+    const searchInput = jQuery('#search');
     const sortTypeSelect = jQuery('#sortType');
     const sortAsSelect = jQuery('#sortAs');
     const sort = jQuery('#sort');
@@ -19,10 +20,12 @@ jQuery(document).ready(async function () {
         sortAs = sortAsSelect.val();
     })
     sort.on('click', function () {
-        displayData(data, sortType, sortAs);
+        displayData(data, sortType, sortAs, searchInput.val());
     })
-    search.on('input', function () {
-        console.log("Search Input");
+    searchInput.on('input', function () {
+        // search = searchInput.val();
+        // console.log();
+        displayData(data, sortType, sortAs, searchInput.val());
     })
 })
 
@@ -37,8 +40,9 @@ async function readData() {
     }
 }
 
-function displayData(incomingData, sortType, sortAs) {
+function displayData(incomingData, sortType, sortAs, search) {
     let data = incomingData;
+    let counter = 1;
     const table = jQuery('#transactionTable');
     table.empty();
     table.append(`
@@ -70,7 +74,8 @@ function displayData(incomingData, sortType, sortAs) {
     };
 
     for (let index = 0; index < data.transactions.length; index++) {
-        table.append(`
+        if (search == null || search == '') {
+            table.append(`
             <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
                 <td class="text-center py-3">${index + 1}</td>
                 <td class="text-center py-3">${getCustomerName(data.transactions[index].customer_id, data)}</td>
@@ -79,6 +84,21 @@ function displayData(incomingData, sortType, sortAs) {
                 <td class="text-center py-3">${data.transactions[index].amount}</td>
                 <td class="text-center py-3">${data.transactions[index].id}</td>
             </tr>`);
+        }
+        else if (!(search == null || search == '')) {
+            if ((getCustomerName(data.transactions[index].customer_id, data).toLowerCase().includes(search.toLowerCase())) || (search == data.transactions[index].customer_id)) {
+                table.append(`
+                <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
+                    <td class="text-center py-3">${counter}</td>
+                    <td class="text-center py-3">${getCustomerName(data.transactions[index].customer_id, data)}</td>
+                    <td class="text-center py-3">${data.transactions[index].customer_id}</td>
+                    <td class="text-center py-3">${data.transactions[index].date}</td>
+                    <td class="text-center py-3">${data.transactions[index].amount}</td>
+                    <td class="text-center py-3">${data.transactions[index].id}</td>
+                </tr>`);
+                counter++;
+            }
+        }
     };
 };
 
