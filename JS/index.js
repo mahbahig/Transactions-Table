@@ -38,8 +38,40 @@ async function readData() {
     }
 }
 
-function displayData(data, sortType, sortAs) {
+async function displayData(incomingData, sortType, sortAs) {
+    let data = incomingData;
     const table = jQuery('#transactionTable');
+    table.empty();
+    table.append(`
+        <thead class="bg-light-blue text-white w-100">
+            <th class="text-center"></th>
+            <th class="text-center">Customer Name</th>
+            <th class="text-center">Customer ID</th>
+            <th class="text-center">Transaction Date</th>
+            <th class="text-center">Transaction Amount in USD</th>
+            <th class="text-center">Transaction ID</th>
+        </thead>`);
+
+    if (sortType === 'name' && (sortAs === 'default' || sortAs === 'ascending')) {
+        data.customers.sort((a, b) => a.name.localeCompare(b.name));
+        let customerMap = {};
+        data.customers.forEach(customer => {
+            customerMap[customer.id] = customer.name;
+        });
+        data.transactions.sort((a, b) => customerMap[a.customer_id].localeCompare(customerMap[b.customer_id]));
+    }
+
+    if (sortType === 'name' && sortAs === 'descending') {
+        data.customers.sort((a, b) => a.name.localeCompare(b.name));
+        let customerMap = {};
+        data.customers.forEach(customer => {
+            customerMap[customer.id] = customer.name;
+        });
+        data.transactions.sort((a, b) => {
+            return customerMap[b.customer_id].localeCompare(customerMap[a.customer_id]);
+        });
+    }
+
     for (let index = 0; index < data.transactions.length; index++) {
         table.append(`
             <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
@@ -50,14 +82,22 @@ function displayData(data, sortType, sortAs) {
                 <td class="text-center py-3">${data.transactions[index].amount}</td>
                 <td class="text-center py-3">${data.transactions[index].id}</td>
             </tr>`);
-
     }
 }
+
 
 function getCustomerName(customerId, data) {
     for (let index = 0; index < data.customers.length; index++) {
         if (data.customers[index].id == customerId) {
             return data.customers[index].name;
+        }
+    }
+}
+
+function getCustomerId(customerName, data) {
+    for (let index = 0; index < data.customers.length; index++) {
+        if (data.customers[index].name == customerName) {
+            return data.customers[index].id;
         }
     }
 }
