@@ -64,6 +64,13 @@ function displayData(incomingData, sortType, sortAs) {
         }
     };
 
+    if (sortType === 'amount') {
+        data.transactions.sort((a, b) => a.amount - b.amount);
+        if (sortAs === 'descending') {
+            data.transactions.reverse();
+        }
+    };
+
     for (let index = 0; index < data.transactions.length; index++) {
         table.append(`
             <tr class="w-100 bg-lightest-blue text-white border-bottom border-dark-green">
