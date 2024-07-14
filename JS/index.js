@@ -1,5 +1,5 @@
-"use strict"
-const dbPath = '../Database/transactionDB.json'
+"use strict";
+const dbPath = '../Database/transactionDB.json';
 let sortType = 'default';
 let sortAs = 'default';
 
@@ -30,8 +30,7 @@ async function readData() {
     try {
         let rawData = await fetch(dbPath);
         let data = await rawData.json();
-        console.log('Connection to database sucessfull');
-        return data
+        return data;
     }
     catch {
         window.alert('Error Connecting to Database');
@@ -61,14 +60,13 @@ function displayData(incomingData, sortType, sortAs) {
         data.transactions.sort((a, b) => customerMap[a.customer_id].localeCompare(customerMap[b.customer_id]));
         if (sortAs === 'descending') {
             data.transactions.reverse();
-        }
-    };
-
-    if (sortType === 'amount') {
+        };
+    }
+    else if (sortType === 'amount') {
         data.transactions.sort((a, b) => a.amount - b.amount);
         if (sortAs === 'descending') {
             data.transactions.reverse();
-        }
+        };
     };
 
     for (let index = 0; index < data.transactions.length; index++) {
@@ -81,22 +79,21 @@ function displayData(incomingData, sortType, sortAs) {
                 <td class="text-center py-3">${data.transactions[index].amount}</td>
                 <td class="text-center py-3">${data.transactions[index].id}</td>
             </tr>`);
-    }
-}
-
+    };
+};
 
 function getCustomerName(customerId, data) {
     for (let index = 0; index < data.customers.length; index++) {
         if (data.customers[index].id == customerId) {
             return data.customers[index].name;
-        }
-    }
-}
+        };
+    };
+};
 
 function getCustomerId(customerName, data) {
     for (let index = 0; index < data.customers.length; index++) {
         if (data.customers[index].name == customerName) {
             return data.customers[index].id;
-        }
-    }
-}
+        };
+    };
+};
