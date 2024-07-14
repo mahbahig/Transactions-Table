@@ -1,3 +1,6 @@
+Sure, here is an updated version of your dataset with more customers and transactions:
+
+```json
 {
     "customers": [
         {
@@ -59,6 +62,26 @@
         {
             "id": 15,
             "name": "Tarek Ahmed"
+        },
+        {
+            "id": 16,
+            "name": "Lina Yasser"
+        },
+        {
+            "id": 17,
+            "name": "Hassan Ali"
+        },
+        {
+            "id": 18,
+            "name": "Marwa Sameh"
+        },
+        {
+            "id": 19,
+            "name": "Karim Fathy"
+        },
+        {
+            "id": 20,
+            "name": "Dina Hassan"
         }
     ],
     "transactions": [
@@ -235,6 +258,66 @@
             "customer_id": 15,
             "date": "2022-01-08",
             "amount": 1750
+        },
+        {
+            "id": 30,
+            "customer_id": 16,
+            "date": "2022-01-09",
+            "amount": 1500
+        },
+        {
+            "id": 31,
+            "customer_id": 17,
+            "date": "2022-01-09",
+            "amount": 1400
+        },
+        {
+            "id": 32,
+            "customer_id": 18,
+            "date": "2022-01-09",
+            "amount": 1700
+        },
+        {
+            "id": 33,
+            "customer_id": 19,
+            "date": "2022-01-10",
+            "amount": 1800
+        },
+        {
+            "id": 34,
+            "customer_id": 20,
+            "date": "2022-01-10",
+            "amount": 1600
+        },
+        {
+            "id": 35,
+            "customer_id": 16,
+            "date": "2022-01-10",
+            "amount": 1500
+        },
+        {
+            "id": 36,
+            "customer_id": 17,
+            "date": "2022-01-11",
+            "amount": 1450
+        },
+        {
+            "id": 37,
+            "customer_id": 18,
+            "date": "2022-01-11",
+            "amount": 1750
+        },
+        {
+            "id": 38,
+            "customer_id": 19,
+            "date": "2022-01-11",
+            "amount": 1900
+        },
+        {
+            "id": 39,
+            "customer_id": 20,
+            "date": "2022-01-12",
+            "amount": 1700
         }
     ]
 }
