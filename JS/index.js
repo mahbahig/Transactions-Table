@@ -23,8 +23,6 @@ jQuery(document).ready(async function () {
         displayData(data, sortType, sortAs, searchInput.val());
     })
     searchInput.on('input', function () {
-        // search = searchInput.val();
-        // console.log();
         displayData(data, sortType, sortAs, searchInput.val());
     })
 })
