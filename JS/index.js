@@ -26,7 +26,7 @@ jQuery(document).ready(async function () {
     searchInput.on('input', function () {
         displayData(data, sortType, sortAs, searchInput.val());
     })
-})
+});
 
 async function readData() {
     try {
@@ -36,8 +36,8 @@ async function readData() {
     }
     catch {
         window.alert('Error Connecting to Database');
-    }
-}
+    };
+};
 
 function displayData(incomingData, sortType, sortAs, search) {
     let data = incomingData;
@@ -96,8 +96,8 @@ function displayData(incomingData, sortType, sortAs, search) {
                     <td class="text-center py-3">${data.transactions[index].id}</td>
                 </tr>`);
                 counter++;
-            }
-        }
+            };
+        };
     };
 };
 
