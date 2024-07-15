@@ -1,6 +1,6 @@
 "use strict";
 // const dbPath = 'http://192.168.56.1:8080/transactionDB.json';
-const dbPath = '/JS/transactionDB.json';
+const dbPath = 'Database/transactionDB.json';
 let sortType = 'default';
 let sortAs = 'default';
 let search = '';
