@@ -152,19 +152,17 @@ function showChartData(data, user) {
                         } else {
                             aggregatedTransactions[transaction.date].amount += transaction.amount;
                         }
-                    }
+                    };
                 });
-            }
+            };
         });
 
-        // Convert aggregated transactions object to array
         for (let date in aggregatedTransactions) {
             if (aggregatedTransactions.hasOwnProperty(date)) {
                 money.push(aggregatedTransactions[date]);
             }
         }
 
-        // Sort money array by date
         money.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         let labels = money.map(entry => entry.date);
@@ -186,16 +184,8 @@ function showChartData(data, user) {
                     borderWidth: 1
                 }]
             },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
+            options: { scales: { y: { beginAtZero: true} } }
         });
-
-        console.log(money);
     }
 }
 
