@@ -134,24 +134,44 @@ function addSelect(customers) {
 }
 
 function showChartData(data, user) {
-    if (!(user == 'default')) {
+    if (user !== 'default') {
         let chartContainer = jQuery('#chartContainer');
         let money = [];
+        let aggregatedTransactions = {};
+
         data.customers.forEach(customer => {
             if (customer.name == user) {
                 data.transactions.forEach(transaction => {
                     if (transaction.customer_id == customer.id) {
-                        money.push({ id: transaction.id, amount: transaction.amount, date: transaction.date });
-                    };
+                        if (!aggregatedTransactions[transaction.date]) {
+                            aggregatedTransactions[transaction.date] = {
+                                id: transaction.id,
+                                amount: transaction.amount,
+                                date: transaction.date
+                            };
+                        } else {
+                            aggregatedTransactions[transaction.date].amount += transaction.amount;
+                        }
+                    }
                 });
-            };
+            }
         });
+
+        // Convert aggregated transactions object to array
+        for (let date in aggregatedTransactions) {
+            if (aggregatedTransactions.hasOwnProperty(date)) {
+                money.push(aggregatedTransactions[date]);
+            }
+        }
+
+        // Sort money array by date
+        money.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         let labels = money.map(entry => entry.date);
         let amounts = money.map(entry => entry.amount);
 
         chartContainer.empty();
-        chartContainer.append(`<canvas class="w-50 bg-white" id="transactionChart" height="200"></canvas>`);
+        chartContainer.append(`<canvas class="w-75 bg-white" id="transactionChart" height="200"></canvas>`);
 
         const ctx = document.getElementById('transactionChart').getContext('2d');
         new Chart(ctx, {
@@ -178,3 +198,4 @@ function showChartData(data, user) {
         console.log(money);
     }
 }
+

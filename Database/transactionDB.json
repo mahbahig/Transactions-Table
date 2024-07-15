@@ -315,6 +315,606 @@
             "customer_id": 20,
             "date": "2022-01-12",
             "amount": 1700
+        },
+        {
+            "id": 40,
+            "customer_id": 1,
+            "date": "2022-01-01",
+            "amount": 1500
+        },
+        {
+            "id": 41,
+            "customer_id": 1,
+            "date": "2022-01-03",
+            "amount": 1000
+        },
+        {
+            "id": 42,
+            "customer_id": 1,
+            "date": "2022-01-06",
+            "amount": 2000
+        },
+        {
+            "id": 43,
+            "customer_id": 1,
+            "date": "2022-01-08",
+            "amount": 2500
+        },
+        {
+            "id": 44,
+            "customer_id": 1,
+            "date": "2022-01-10",
+            "amount": 3000
+        },
+        {
+            "id": 45,
+            "customer_id": 2,
+            "date": "2022-01-01",
+            "amount": 700
+        },
+        {
+            "id": 46,
+            "customer_id": 2,
+            "date": "2022-01-04",
+            "amount": 800
+        },
+        {
+            "id": 47,
+            "customer_id": 2,
+            "date": "2022-01-07",
+            "amount": 1500
+        },
+        {
+            "id": 48,
+            "customer_id": 2,
+            "date": "2022-01-09",
+            "amount": 1600
+        },
+        {
+            "id": 49,
+            "customer_id": 2,
+            "date": "2022-01-12",
+            "amount": 1400
+        },
+        {
+            "id": 50,
+            "customer_id": 3,
+            "date": "2022-01-02",
+            "amount": 1200
+        },
+        {
+            "id": 51,
+            "customer_id": 3,
+            "date": "2022-01-04",
+            "amount": 1000
+        },
+        {
+            "id": 52,
+            "customer_id": 3,
+            "date": "2022-01-06",
+            "amount": 1500
+        },
+        {
+            "id": 53,
+            "customer_id": 3,
+            "date": "2022-01-08",
+            "amount": 1300
+        },
+        {
+            "id": 54,
+            "customer_id": 3,
+            "date": "2022-01-11",
+            "amount": 2000
+        },
+        {
+            "id": 55,
+            "customer_id": 4,
+            "date": "2022-01-01",
+            "amount": 800
+        },
+        {
+            "id": 56,
+            "customer_id": 4,
+            "date": "2022-01-05",
+            "amount": 1500
+        },
+        {
+            "id": 57,
+            "customer_id": 4,
+            "date": "2022-01-08",
+            "amount": 1200
+        },
+        {
+            "id": 58,
+            "customer_id": 4,
+            "date": "2022-01-10",
+            "amount": 1000
+        },
+        {
+            "id": 59,
+            "customer_id": 4,
+            "date": "2022-01-12",
+            "amount": 900
+        },
+        {
+            "id": 60,
+            "customer_id": 5,
+            "date": "2022-01-02",
+            "amount": 1500
+        },
+        {
+            "id": 61,
+            "customer_id": 5,
+            "date": "2022-01-03",
+            "amount": 1800
+        },
+        {
+            "id": 62,
+            "customer_id": 5,
+            "date": "2022-01-06",
+            "amount": 2000
+        },
+        {
+            "id": 63,
+            "customer_id": 5,
+            "date": "2022-01-09",
+            "amount": 2200
+        },
+        {
+            "id": 64,
+            "customer_id": 5,
+            "date": "2022-01-11",
+            "amount": 2500
+        },
+        {
+            "id": 65,
+            "customer_id": 6,
+            "date": "2022-01-04",
+            "amount": 1200
+        },
+        {
+            "id": 66,
+            "customer_id": 6,
+            "date": "2022-01-05",
+            "amount": 1100
+        },
+        {
+            "id": 67,
+            "customer_id": 6,
+            "date": "2022-01-08",
+            "amount": 1400
+        },
+        {
+            "id": 68,
+            "customer_id": 6,
+            "date": "2022-01-10",
+            "amount": 1300
+        },
+        {
+            "id": 69,
+            "customer_id": 6,
+            "date": "2022-01-11",
+            "amount": 1600
+        },
+        {
+            "id": 70,
+            "customer_id": 7,
+            "date": "2022-01-04",
+            "amount": 1000
+        },
+        {
+            "id": 71,
+            "customer_id": 7,
+            "date": "2022-01-06",
+            "amount": 1100
+        },
+        {
+            "id": 72,
+            "customer_id": 7,
+            "date": "2022-01-08",
+            "amount": 1200
+        },
+        {
+            "id": 73,
+            "customer_id": 7,
+            "date": "2022-01-10",
+            "amount": 1300
+        },
+        {
+            "id": 74,
+            "customer_id": 7,
+            "date": "2022-01-12",
+            "amount": 1400
+        },
+        {
+            "id": 75,
+            "customer_id": 8,
+            "date": "2022-01-03",
+            "amount": 1500
+        },
+        {
+            "id": 76,
+            "customer_id": 8,
+            "date": "2022-01-05",
+            "amount": 1600
+        },
+        {
+            "id": 77,
+            "customer_id": 8,
+            "date": "2022-01-07",
+            "amount": 1700
+        },
+        {
+            "id": 78,
+            "customer_id": 8,
+            "date": "2022-01-09",
+            "amount": 1800
+        },
+        {
+            "id": 79,
+            "customer_id": 8,
+            "date": "2022-01-12",
+            "amount": 1900
+        },
+        {
+            "id": 80,
+            "customer_id": 9,
+            "date": "2022-01-03",
+            "amount": 2000
+        },
+        {
+            "id": 81,
+            "customer_id": 9,
+            "date": "2022-01-05",
+            "amount": 2100
+        },
+        {
+            "id": 82,
+            "customer_id": 9,
+            "date": "2022-01-07",
+            "amount": 2200
+        },
+        {
+            "id": 83,
+            "customer_id": 9,
+            "date": "2022-01-09",
+            "amount": 2300
+        },
+        {
+            "id": 84,
+            "customer_id": 9,
+            "date": "2022-01-11",
+            "amount": 2400
+        },
+        {
+            "id": 85,
+            "customer_id": 10,
+            "date": "2022-01-03",
+            "amount": 2500
+        },
+        {
+            "id": 86,
+            "customer_id": 10,
+            "date": "2022-01-05",
+            "amount": 2600
+        },
+        {
+            "id": 87,
+            "customer_id": 10,
+            "date": "2022-01-07",
+            "amount": 2700
+        },
+        {
+            "id": 88,
+            "customer_id": 10,
+            "date": "2022-01-09",
+            "amount": 2800
+        },
+        {
+            "id": 89,
+            "customer_id": 10,
+            "date": "2022-01-11",
+            "amount": 2900
+        },
+        {
+            "id": 90,
+            "customer_id": 11,
+            "date": "2022-01-07",
+            "amount": 3000
+        },
+        {
+            "id": 91,
+            "customer_id": 11,
+            "date": "2022-01-09",
+            "amount": 3100
+        },
+        {
+            "id": 92,
+            "customer_id": 11,
+            "date": "2022-01-11",
+            "amount": 3200
+        },
+        {
+            "id": 93,
+            "customer_id": 11,
+            "date": "2022-01-13",
+            "amount": 3300
+        },
+        {
+            "id": 94,
+            "customer_id": 11,
+            "date": "2022-01-15",
+            "amount": 3400
+        },
+        {
+            "id": 95,
+            "customer_id": 12,
+            "date": "2022-01-07",
+            "amount": 3500
+        },
+        {
+            "id": 96,
+            "customer_id": 12,
+            "date": "2022-01-09",
+            "amount": 3600
+        },
+        {
+            "id": 97,
+            "customer_id": 12,
+            "date": "2022-01-11",
+            "amount": 3700
+        },
+        {
+            "id": 98,
+            "customer_id": 12,
+            "date": "2022-01-13",
+            "amount": 3800
+        },
+        {
+            "id": 99,
+            "customer_id": 12,
+            "date": "2022-01-15",
+            "amount": 3900
+        },
+        {
+            "id": 100,
+            "customer_id": 13,
+            "date": "2022-01-05",
+            "amount": 4000
+        },
+        {
+            "id": 101,
+            "customer_id": 13,
+            "date": "2022-01-07",
+            "amount": 4100
+        },
+        {
+            "id": 102,
+            "customer_id": 13,
+            "date": "2022-01-09",
+            "amount": 4200
+        },
+        {
+            "id": 103,
+            "customer_id": 13,
+            "date": "2022-01-11",
+            "amount": 4300
+        },
+        {
+            "id": 104,
+            "customer_id": 13,
+            "date": "2022-01-13",
+            "amount": 4400
+        },
+        {
+            "id": 105,
+            "customer_id": 14,
+            "date": "2022-01-08",
+            "amount": 4500
+        },
+        {
+            "id": 106,
+            "customer_id": 14,
+            "date": "2022-01-10",
+            "amount": 4600
+        },
+        {
+            "id": 107,
+            "customer_id": 14,
+            "date": "2022-01-12",
+            "amount": 4700
+        },
+        {
+            "id": 108,
+            "customer_id": 14,
+            "date": "2022-01-14",
+            "amount": 4800
+        },
+        {
+            "id": 109,
+            "customer_id": 14,
+            "date": "2022-01-16",
+            "amount": 4900
+        },
+        {
+            "id": 110,
+            "customer_id": 15,
+            "date": "2022-01-08",
+            "amount": 5000
+        },
+        {
+            "id": 111,
+            "customer_id": 15,
+            "date": "2022-01-10",
+            "amount": 5100
+        },
+        {
+            "id": 112,
+            "customer_id": 15,
+            "date": "2022-01-12",
+            "amount": 5200
+        },
+        {
+            "id": 113,
+            "customer_id": 15,
+            "date": "2022-01-14",
+            "amount": 5300
+        },
+        {
+            "id": 114,
+            "customer_id": 15,
+            "date": "2022-01-16",
+            "amount": 5400
+        },
+        {
+            "id": 115,
+            "customer_id": 16,
+            "date": "2022-01-09",
+            "amount": 5500
+        },
+        {
+            "id": 116,
+            "customer_id": 16,
+            "date": "2022-01-11",
+            "amount": 5600
+        },
+        {
+            "id": 117,
+            "customer_id": 16,
+            "date": "2022-01-13",
+            "amount": 5700
+        },
+        {
+            "id": 118,
+            "customer_id": 16,
+            "date": "2022-01-15",
+            "amount": 5800
+        },
+        {
+            "id": 119,
+            "customer_id": 16,
+            "date": "2022-01-17",
+            "amount": 5900
+        },
+        {
+            "id": 120,
+            "customer_id": 17,
+            "date": "2022-01-09",
+            "amount": 6000
+        },
+        {
+            "id": 121,
+            "customer_id": 17,
+            "date": "2022-01-11",
+            "amount": 6100
+        },
+        {
+            "id": 122,
+            "customer_id": 17,
+            "date": "2022-01-13",
+            "amount": 6200
+        },
+        {
+            "id": 123,
+            "customer_id": 17,
+            "date": "2022-01-15",
+            "amount": 6300
+        },
+        {
+            "id": 124,
+            "customer_id": 17,
+            "date": "2022-01-17",
+            "amount": 6400
+        },
+        {
+            "id": 125,
+            "customer_id": 18,
+            "date": "2022-01-09",
+            "amount": 6500
+        },
+        {
+            "id": 126,
+            "customer_id": 18,
+            "date": "2022-01-11",
+            "amount": 6600
+        },
+        {
+            "id": 127,
+            "customer_id": 18,
+            "date": "2022-01-13",
+            "amount": 6700
+        },
+        {
+            "id": 128,
+            "customer_id": 18,
+            "date": "2022-01-15",
+            "amount": 6800
+        },
+        {
+            "id": 129,
+            "customer_id": 18,
+            "date": "2022-01-17",
+            "amount": 6900
+        },
+        {
+            "id": 130,
+            "customer_id": 19,
+            "date": "2022-01-10",
+            "amount": 7000
+        },
+        {
+            "id": 131,
+            "customer_id": 19,
+            "date": "2022-01-12",
+            "amount": 7100
+        },
+        {
+            "id": 132,
+            "customer_id": 19,
+            "date": "2022-01-14",
+            "amount": 7200
+        },
+        {
+            "id": 133,
+            "customer_id": 19,
+            "date": "2022-01-16",
+            "amount": 7300
+        },
+        {
+            "id": 134,
+            "customer_id": 19,
+            "date": "2022-01-18",
+            "amount": 7400
+        },
+        {
+            "id": 135,
+            "customer_id": 20,
+            "date": "2022-01-10",
+            "amount": 7500
+        },
+        {
+            "id": 136,
+            "customer_id": 20,
+            "date": "2022-01-12",
+            "amount": 7600
+        },
+        {
+            "id": 137,
+            "customer_id": 20,
+            "date": "2022-01-14",
+            "amount": 7700
+        },
+        {
+            "id": 138,
+            "customer_id": 20,
+            "date": "2022-01-16",
+            "amount": 7800
+        },
+        {
+            "id": 139,
+            "customer_id": 20,
+            "date": "2022-01-18",
+            "amount": 7900
         }
     ]
 }
