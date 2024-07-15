@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="CSS/palette.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Customer Transaction</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-dark-beige">
@@ -34,6 +36,14 @@
         </div>
         <table id="transactionTable" class="w-100 mt-4">
         </table>
+        <div class="my-5 d-flex justify-content-between">
+            <select id="customerChart" class="form-select me-4" aria-label="Default select example">
+                <option value="default" selected class="bg-light-green">Default</option>
+            </select>
+            <button id="showChart" type="button" class="btn btn-search text-white">Show the Chart</button>
+        </div>
+        <div id="chartContainer" class="d-flex justify-content-center">
+        </div>
     </div>
 
     <script src="JS/bootstrap.min.js"></script>

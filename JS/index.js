@@ -1,14 +1,17 @@
 "use strict";
 // const dbPath = 'http://192.168.56.1:8080/transactionDB.json';
 const dbPath = 'Database/transactionDB.json';
+const customerChart = jQuery('#customerChart');
 let sortType = 'default';
 let sortAs = 'default';
+let user = 'default';
 let search = '';
 
 jQuery(document).ready(async function () {
     let data = await readData();
     displayData(data, sortType, sortAs);
 
+    const showChart = jQuery('#showChart');
     const searchInput = jQuery('#search');
     const sortTypeSelect = jQuery('#sortType');
     const sortAsSelect = jQuery('#sortAs');
@@ -26,6 +29,12 @@ jQuery(document).ready(async function () {
     searchInput.on('input', function () {
         displayData(data, sortType, sortAs, searchInput.val());
     })
+    customerChart.on('change', function () {
+        user = customerChart.val();
+    })
+    showChart.on('click', function () {
+        showChartData(data, user);
+    })
 });
 
 async function readData() {
@@ -42,6 +51,7 @@ async function readData() {
 function displayData(incomingData, sortType, sortAs, search) {
     let data = incomingData;
     let counter = 1;
+    addSelect(data.customers);
     const table = jQuery('#transactionTable');
     table.empty();
     table.append(`
@@ -116,3 +126,55 @@ function getCustomerId(customerName, data) {
         };
     };
 };
+
+function addSelect(customers) {
+    customers.forEach(customer => {
+        customerChart.append(`<option value="${customer.name}" class="bg-light-green">${customer.name}</option>`)
+    });
+}
+
+function showChartData(data, user) {
+    if (!(user == 'default')) {
+        let chartContainer = jQuery('#chartContainer');
+        let money = [];
+        data.customers.forEach(customer => {
+            if (customer.name == user) {
+                data.transactions.forEach(transaction => {
+                    if (transaction.customer_id == customer.id) {
+                        money.push({ id: transaction.id, amount: transaction.amount, date: transaction.date });
+                    };
+                });
+            };
+        });
+
+        let labels = money.map(entry => entry.date);
+        let amounts = money.map(entry => entry.amount);
+
+        chartContainer.empty();
+        chartContainer.append(`<canvas class="w-50 bg-white" id="transactionChart" height="200"></canvas>`);
+
+        const ctx = document.getElementById('transactionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Amount',
+                    data: amounts,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        console.log(money);
+    }
+}
